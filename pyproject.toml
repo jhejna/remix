@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "openx"
+version = "0.0.1"
+description = "openx experimentation package."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    { name = "Joey Hejna", email = "jhejna@cs.stanford.edu" },
+]
+license = { file = "LICENSE" }
+
+classifiers = [
+    "Topic :: openx",
+    "Private :: Do Not Upload"
+]
+
+[tool.black]
+line-length = 120
+target-version = ["py310", "py311"]
+preview = true
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+lint.select = ["A", "B", "C90", "E", "F", "I", "RUF", "W"]
+lint.ignore = ["A002", "A003", "B027", "C901", "RUF012"]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["E402", "F401"]
+
+[tool.isort]
+profile = "black"
+line_length = 120
+skip = ["__init__.py"]
+filter_files = true
+py_version = "all"

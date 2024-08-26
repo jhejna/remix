@@ -1,0 +1,43 @@
+# Core
+numpy
+tensorflow==2.15.0
+tensorflow_datasets==4.9.4
+tensorflow_graphics == 2021.12.3
+tensorflow_probability==0.23.0
+scikit-learn
+scipy
+jax==0.4.26
+flax==0.8.2
+optax==0.2.1
+distrax==0.1.5
+gymnasium
+ml_collections
+# If some ML Collections features don't work, consider the newer version
+# git+https://github.com/google/ml_collections@bdbda166a502661576c6217a3cb9578f2c61e198
+
+# dev
+pre-commit
+absl-py
+
+# vis
+matplotlib
+tqdm
+seaborn
+imageio
+tqdm
+wandb
+
+# For robosuite evals. Can comment out if wanted
+# Install mujoco 210
+# mujoco-py<2.2,>=2.0 # The version of mujoco set on the original branch doesn't work for me.
+# cython==0.29.37
+# pip install robosuite from the offline_study branch and use --no-deps
+# pip install robomimic from the v0.2.0 branch and use --no-deps
+# You may need to fix some python heads manually :( they didnt upgrade for typing in python 3.11 at that point.
+# Then you will need to install torch (cpu)
+# pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+# you may need to conda install GCC
+# conda install -c conda-forge gcc=12.1.0
+# In robomimic you will need to manually comment out thigs that ask for EGL probe if running on TPU.
+# unfortunately this means all rendering will happen on CPU real slow :( but oh well what can you do.
+# on the TPUs run `sudo apt install libosmesa6-dev libgl1-mesa-glx libglfw3 patchelf`
